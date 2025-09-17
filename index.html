@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>In Loving Memory of Ntombifuthi</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffe0b2, #ffccbc);
+      margin: 0;
+      padding: 20px;
+      color: #333;
+      text-align: center;
+    }
+
+   header {
+  margin-bottom: 50px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffb347, #ffcc33);
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+  header h1 {
+  color: #fff;
+  font-size: 3em;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  font-family: 'Georgia', serif;
+}
+
+header p {
+  font-size: 1.5em;
+  color: #fff8f0;
+  font-weight: bold;
+}
+
+
+  h2 {
+  color: #ff6f61;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  border-bottom: 3px solid #ff6f61;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+section {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 20px;
+  margin: 30px auto;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  max-width: 1000px;
+}
+
+
+   #family-tree {
+  background: linear-gradient(120deg, #ffe0b2, #ffccbc);
+  padding: 40px 20px;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+    .generation, .child-group {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .member {
+      background: #fff3e6;
+      border-radius: 15px;
+      padding: 15px;
+      width: 180px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-align: center;
+      position: relative;
+    }
+
+.member:hover {
+  transform: translateY(-5px) scale(1.08);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+    .member img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #ff8a65;
+    }
+
+    .deceased h3 {
+      color: #d9534f;
+      text-decoration: line-through;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    /* Memories Section */
+    .memories {
+      margin-top: 50px;
+      padding: 30px;
+      background: rgba(255, 248, 240, 0.9);
+      border-radius: 20px;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .memories img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 10px;
+    }
+
+    .memory {
+      margin-bottom: 20px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+ .memories {
+  background: linear-gradient(135deg, #ffe6f0, #ffd6cc);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+#tributes {
+  background: linear-gradient(135deg, #fff0e6, #ffd6cc);
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+    #tributes h2 {
+      color: #ff6f61;
+      margin-bottom: 15px;
+    }
+
+    #message-form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    #message-form input, 
+    #message-form textarea {
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    #message-form button {
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #ff6f61;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    #message-form button:hover {
+      background: #ff4f3a;
+    }
+
+    #messages-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .message-card {
+      background: #fff3e6;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      text-align: left;
+    }
+	.slideshow {
+  margin: 40px auto;
+  max-width: 900px;
+  position: relative;
+  border-radius: 25px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+  background: linear-gradient(135deg, #ffe6f0, #ffd6cc);
+  padding: 20px;
+}
+
+.slideshow h2 {
+  margin-bottom: 20px;
+  color: #ff4f3a;
+  font-size: 2.5em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.slide-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  height: 500px;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.slides.active {
+  opacity: 1;
+}
+
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🌸 Ntombifuthi Nicholinah (MaNyawuza) Mchunu 🌸</h1>
+    <p>Born: 16 Dec 1953 – Passed: 01 Apr 2024</p>
+  </header>
+  <!-- Slideshow Section -->
+<section class="slideshow">
+  <h2>📸 Remembering Grandma</h2>
+  <div class="slide-container">
+    <img class="slides" src="images/Nyawzoe.jpg" alt="Grandma Photo 1">
+    <img class="slides" src="images/Gogo2.jpg" alt="Grandma Photo 2">
+    <img class="slides" src="images/Gogo3.jpg" alt="Grandma Photo 3">
+    <img class="slides" src="images/Gogo4.jpg" alt="Grandma Photo 4">
+    <img class="slides" src="images/Gogo5.jpg" alt="Grandma Photo 5">
+    <img class="slides" src="images/Gogo6.jpg" alt="Grandma Photo 6">
+    <img class="slides" src="images/Gogo7.jpg" alt="Grandma Photo 7">
+<img class="slides" src="images/Gogo8.jpg" alt="Grandma Photo 8">
+    <img class="slides" src="images/Gogo.jpg" alt="Grandma Photo 9">
+    <img class="slides" src="images/Gogo10.jpg" alt="Grandma Photo 10">
+    <img class="slides" src="images/Gogo11.jpg" alt="Grandma Photo 11">
+    <img class="slides" src="images/Gogo12.jpg" alt="Grandma Photo 12">
+    <img class="slides" src="images/Gogo13.jpg" alt="Grandma Photo 13">
+    <img class="slides" src="images/Gogo14.jpg" alt="Grandma Photo 14">
+    <img class="slides" src="images/Gogo15.jpg" alt="Grandma Photo 15">
+  </div>
+</section>
+
+  <!-- Family Tree -->
+  <section id="family-tree">
+    <h2>🌳 Family Tree</h2>
+    <div class="tree">
+      <!-- Grandmother -->
+      <div class="generation">
+        <div class="member" onclick="toggle('children')">
+          <img src="images/Gogo.jpg" alt="Grandma">
+          <h3>Ntombifuthi Nicholinah</h3>
+          <small>(Click to see children)</small>
+        </div>
+      </div>
+
+      <!-- Children -->
+      <div id="children" class="child-group hidden">
+        <div class="member" onclick="toggle('lindiwe-branch')">
+          <img src="images/Lindiwe.jpg" alt="Lindiwe">
+          <h3>Lindiwe</h3>
+          <p>Born: 21 Apr 1971</p>
+        </div>
+        <div class="member" onclick="toggle('thulile-branch')">
+          <img src="images/Thulile.jpg" alt="Thulile">
+          <h3>Thulile</h3>
+          <p>Born: 02 Apr 1976</p>
+        </div>
+        <div class="member" onclick="toggle('thembile-branch')">
+          <img src="images/Thembile.jpg" alt="Thembile">
+          <h3>Thembile</h3>
+          <p>Born: 25 Oct 1981</p>
+        </div>
+        <div class="member" onclick="toggle('phakamsile-branch')">
+          <img src="images/Phakamsile.jpg" alt="Phakamsile">
+          <h3>Phakamsile</h3>
+          <p>Born: 24 Feb 1984</p>
+        </div>
+        <div class="member" onclick="toggle('sibongiseni-branch')">
+          <img src="images/Sibongiseni.jpg" alt="Sibongiseni">
+          <h3>Sibongiseni</h3>
+          <p>Born: 18 Nov</p>
+        </div>
+       <div class="member deceased" onclick="toggle('zodwa-branch')">
+  <img src="images/RIP.jpg" alt="Zodwa">
+  <h3>Zodwa</h3>
+  <p>07 Mar 1989 – 10 Nov 2016</p>
+  <small>(Click for children)</small>
+</div>
+
+        <div class="member" onclick="toggle('nonhlanhla-branch')">
+          <img src="images/Nonhlanhla.jpg" alt="Nonhlanhla">
+          <h3>Nonhlanhla</h3>
+          <p>Born: 11 Nov 1990</p>
+        </div>
+        <div class="member" onclick="toggle('asiphe-branch')">
+          <img src="images/Asophe.jpg" alt="Asiphe">
+          <h3>Asiphe</h3>
+          <p>Born: 18 Apr 1993</p>
+        </div>
+      </div>
+
+      <!-- Lindiwe branch -->
+      <div id="lindiwe-branch" class="child-group hidden">
+        <div class="member" onclick="toggle('zamokuhle-branch')">
+          <img src="images/Zama.jpg" alt="Zamokuhle">
+          <h3>Zamokuhle</h3>
+          <p>Born: 22 Apr 1991</p>
+        </div>
+      </div>
+      <div id="zamokuhle-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Zelwande.jpg" alt="Zelwande">
+          <h3>Zelwande</h3>
+          <p>Born: 17 Apr 2020</p>
+        </div>
+      </div>
+
+      <!-- Thulile branch -->
+      <div id="thulile-branch" class="child-group hidden">
+        <div class="member" onclick="toggle('mfundo-branch')">
+          <img src="images/Melusi.jpg" alt="Melusi">
+          <h3>Melusi</h3>
+          <p>Born: 30 Jul 1997</p>
+          <small>Deceased</small>
+        </div>
+       <div class="member deceased">
+  <img src="images/RIP.jpg" alt="Mnelisi">
+  <h3>Mnelisi</h3>
+  <p>30 Jul 1997 – [date of passing if known]</p>
+</div>
+
+        <div class="member" onclick="toggle('mfundo-branch')">
+          <img src="images/Mfundo.jpg" alt="Mfundo">
+          <h3>Mfundo</h3>
+          <p>Born: 30 May 2002</p>
+        </div>
+        <div class="member">
+          <img src="images/Smangaliso.jpg" alt="Simangaliso">
+          <h3>Simangaliso</h3>
+          <p>Born: 08 Feb 2012</p>
+        </div>
+      </div>
+
+      <div id="mfundo-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Sibusiso.jpg" alt="Sibusiso">
+          <h3>Sibusiso</h3>
+          <p>Great-grandchild of Grandma</p>
+        </div>
+      </div>
+
+      <!-- Thembile branch -->
+      <div id="thembile-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Mpilo.jpg" alt="Mpilwenhle">
+          <h3>Mpilwenhle</h3>
+          <p>Born: 21 Dec 200?</p>
+        </div>
+        <div class="member">
+          <img src="images/Siyamukela.jpg" alt="Siyamukela">
+          <h3>Siyamukela</h3>
+          <p>Born: 27 Feb 2006</p>
+        </div>
+        <div class="member deceased">
+          <img src="images/RIP.jpg" alt="Mvelo">
+          <h3>Mvelo</h3>
+          <p>15 May 2014 - 07 Jul 2016</p>
+        </div>
+        <div class="member deceased">
+          <img src="images/RIP.jpg" alt="Zekhethelo">
+          <h3>Zekhethelo</h3>
+          <p>Deceased</p>
+        </div>
+      </div>
+
+      <!-- Phakamsile branch -->
+      <div id="phakamsile-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Sinethemba.jpg" alt="Sinethemba">
+          <h3>Sinethemba</h3>
+        </div>
+        <div class="member">
+          <img src="images/Siyamthanda.jpg" alt="Siyamthanda">
+          <h3>Siyamthanda</h3>
+          <p>Born: 15 Oct 2009</p>
+        </div>
+        <div class="member">
+          <img src="images/Aviwe.jpg" alt="Aviwe">
+          <h3>Aviwe</h3>
+          <p>Born: 28 Feb 2011</p>
+        </div>
+        <div class="member">
+          <img src="images/Lithandile.jpg" alt="Lithandile">
+          <h3>Lithandile</h3>
+          <p>Born: 17 Sep 2020</p>
+        </div>
+      </div>
+
+      <!-- Sibongiseni branch -->
+      <div id="sibongiseni-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Philile.jpg" alt="Philile">
+          <h3>Philile</h3>
+        </div>
+        <div class="member">
+          <img src="images/placeholder.jpg" alt="Unknown">
+          <h3>Unknown</h3>
+        </div>
+      </div>
+
+      <!-- Zodwa branch -->
+      <div id="zodwa-branch" class="child-group hidden">
+        <div class="member" onclick="toggle('asande-branch')">
+          <img src="images/Asande.jpg" alt="Asande">
+          <h3>Asande</h3>
+          <p>Born: </p>
+        </div>
+      </div>
+      <div id="asande-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Fezeka.jpg" alt="Fezeka">
+          <h3>Fezeka</h3>
+          <p>Born: 19 Jan 2024</p>
+        </div>
+      </div>
+
+      <!-- Nonhlanhla branch -->
+      <div id="nonhlanhla-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Minenhle.jpg" alt="Minenhle">
+          <h3>Minenhle</h3>
+          <p>Born: 20 Feb 2010</p>
+        </div>
+        <div class="member">
+          <img src="images/Ziyanda.jpg" alt="Ziyanda">
+          <h3>Ziyanda</h3>
+          <p>Born: 16 Mar 2020</p>
+        </div>
+      </div>
+
+      <!-- Asiphe branch -->
+      <div id="asiphe-branch" class="child-group hidden">
+        <div class="member">
+          <img src="images/Sakhe.jpg" alt="Siphosakhe">
+          <h3>Siphosakhe</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Memories Section -->
+  <section class="memories">
+    <h2>💖 Memories of Grandma</h2>
+    <div class="memory">
+      <img src="images/Nyawzoe.jpg" alt="Young Grandma">
+      <p>"Always kind, always loving. Grandma loved to cook and tell stories of her childhood."</p>
+    </div>
+    <div class="memory">
+      <img src="images/Granny.jpg" alt="Grandma with family">
+      <p>"Her laughter was infectious. Family gatherings were never complete without her smile."</p>
+    </div>
+  </section>
+
+  <!-- Tributes Section -->
+  <section id="tributes">
+    <h2>💌 Tributes & Messages</h2>
+    <p>Leave a message to celebrate Grandma's life:</p>
+
+    <form id="message-form">
+      <input type="text" id="name" placeholder="Your name" required>
+      <textarea id="message" placeholder="Your message..." required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+
+    <div id="messages-container"></div>
+  </section>
+
+ <script>
+  // Toggle branches
+  function toggle(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.toggle('hidden');
+  }
+
+  // Tributes form
+  const form = document.getElementById('message-form');
+  const messagesContainer = document.getElementById('messages-container');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if(name && message) {
+      const messageCard = document.createElement('div');
+      messageCard.classList.add('message-card');
+      messageCard.innerHTML = `<strong>${name}:</strong> <p>${message}</p>`;
+      messagesContainer.prepend(messageCard);
+      form.reset();
+    }
+  });
+
+  // Slideshow
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slides");
+
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].classList.remove("active");
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+    slides[slideIndex - 1].classList.add("active");
+    setTimeout(showSlides, 4000); // Change slide every 4 seconds
+  }
+
+  showSlides();
+</script>
+
+</body>
+</html>
